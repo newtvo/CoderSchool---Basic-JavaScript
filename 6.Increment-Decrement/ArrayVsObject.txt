@@ -1,0 +1,6 @@
+/**
+ * Cách sử dụng Array và Object khác nhau như thế nào. Viết câu trả lời ở phía dưới.
+ */
+
+- Arrray là 1 mảng các phần tử giống nhau.
+- Object là đối tượng chứa các thuộc tính liên quan đến đối tượng ấy.

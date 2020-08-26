@@ -29,8 +29,11 @@ while(flag) {
 
 var question = readlineSync.question("Please choose the following options: ");
 if ( question == '1' ) {
+    // Read data using readFileSync 
     var showAllData = fs.readFileSync('./data.json', { encoding: 'utf-8' });
+    // Parse data in to object
     var result = JSON.parse(showAllData);
+    // Push this new object into the array, this will allow current object and future object to be added in 1 array
     arrNewStudent.push(result);
     console.log(showAllData);
 }
@@ -51,13 +54,9 @@ else if ( question == '2' ) {
     
     fs.writeFileSync("./data.json", JSON.stringify(arrNewStudent));
     console.log(newStudent);
-   
-   // console.log(arrNewStudent)
-   
-  }
-else {
-    // fs.writeFileSync("./data.json", log);
     
+  }
+else {    
     flag = false;
  }
 }

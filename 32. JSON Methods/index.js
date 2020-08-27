@@ -22,13 +22,15 @@ var myCat = JSON.parse(myCatString);
 // > Your Age?
 // > Your Class?
 // > 3.
-var flag = true;
+//var flag = true;
 var arrNewStudent = [];
 
-while(flag) {
+while(true) {
 
 var question = readlineSync.question("Please choose the following options: ");
-if ( question == '1' ) {
+switch(question) {
+//if ( question == '1' ) {
+ case '1':
     // Read data using readFileSync 
     var showAllData = fs.readFileSync('./data.json', { encoding: 'utf-8' });
     // Parse data in to object
@@ -36,9 +38,10 @@ if ( question == '1' ) {
     // Push this new object into the array, this will allow current object and future object to be added in 1 array
     arrNewStudent.push(result);
     console.log(showAllData);
-}
-else if ( question == '2' ) {
-
+    break;
+//}
+//else if ( question == '2' ) {
+ case '2':
     var newStudent = {};
 
     var name = readlineSync.question("Your Name ? ");
@@ -54,10 +57,13 @@ else if ( question == '2' ) {
     
     fs.writeFileSync("./data.json", JSON.stringify(arrNewStudent));
     console.log(newStudent);
-    
-  }
-else {    
-    flag = false;
+    break;
+ // }
+ default:
+//else {    
+    //flag = false;
+    return false;
+// }
  }
 }
 
